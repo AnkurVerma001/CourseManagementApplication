@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Details</title>
+</head>
+<body>
+    <h1>Book Information</h1>
+    Title: <h2 th:text="${book.title}">Title</h2>
+    Author: <h2 th:text="${book.author}">Author</h2>
+    Genre: <h2 th:text="${book.genre}">Genre</h2>
+    Available: <h2 th:text="${book.available}">Availability</h2>
+
+    <div th:object="${book}">
+        <h1>Book Information by Selection Expression</h1>
+        Title: <h2 th:text="*{title}">Title</h2>
+        Author: <h2 th:text="*{author}">Author</h2>
+        Genre: <h2 th:text="*{genre}">Genre</h2>
+        Available: <h2 th:text="*{available}">Availability</h2>
+    </div>
+</body>
+</html>

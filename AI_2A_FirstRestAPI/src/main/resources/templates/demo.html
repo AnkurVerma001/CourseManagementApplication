@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Details</title>
+</head>
+<body>
+    <h1>Course Information</h1>
+    Name: <h2 th:text="${course.name}">Course Name</h2>
+    Duration: <h2 th:text="${course.duration}">Duration</h2>
+    Instructor: <h2 th:text="${course.instructor}">Instructor</h2>
+
+    <div th:object="${course}">
+        <h1>Course Information by Selection Expression</h1>
+        Name: <h2 th:text="*{name}">Course Name</h2>
+        Duration: <h2 th:text="*{duration}">Duration</h2>
+        Instructor: <h2 th:text="*{instructor}">Instructor</h2>
+    </div>
+</body>
+</html>
